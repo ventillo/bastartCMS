@@ -60,8 +60,10 @@ tinymce.init({
    
    external_filemanager_path:"/filemanager/",
    filemanager_title:"Responsive Filemanager" ,
-   external_plugins: { "filemanager" : "/filemanager/plugin.min.js"}
+   external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
+   relative_urls: false
  }); 
+
     </script>
 
   </head>
