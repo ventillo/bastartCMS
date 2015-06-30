@@ -38,8 +38,8 @@ if(isset($_GET['site_page'])){
     <? 
     if (isset($_GET['error'])){ 
       $error = $_GET['error'];
-      if ($error == '0') printf('<a href="./?section=site_pages_editor"><button type="button" class="btn btn-success">OK</button></a>');
-      if ($error != '0') printf('<a href="./?section=site_pages_editor"><button type="button" class="btn btn-warning">ERROR: %s</button></a>',$error); 
+      if ($error == '0') printf('<a href="./?section=site_pages_editor&site_page=%s"><button type="button" class="btn btn-success">OK</button></a>',$id);
+      if ($error != '0') printf('<a href="./?section=site_pages_editor&site_page=%s"><button type="button" class="btn btn-warning">ERROR: %s</button></a>',$id,$error); 
     }
     ?>
 </form>
