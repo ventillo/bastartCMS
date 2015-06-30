@@ -1,0 +1,85 @@
+/*!
+ * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 0px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+.nav{
+  float: right;
+}
+.navbar-brand{
+  float: left;
+}
+.navbar-brand-text{
+  position: absolute;
+  left: 130px;
+  color:grey;
+  top:0.2em;
+  visibility:hidden;
+}
+.navbar-brand-text a{
+  color:red;
+}
+
+.textarea{
+  padding-top:50px;
+  -padding-top: 140px;
+  margin-top:140px;
+  -margin-top:0px;
+  background-color: rgba(1,1,1,0.5);
+  padding-bottom: 50px;
+  padding-left:8%;
+  padding-right:8%;
+  color: white;
+}
+
+.text {
+  font-size: 1em;
+}
+
+
+@media(min-width:480px){
+  .navbar-brand-text{
+    visibility:visible;
+  }
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 0px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+        
+    }
+    .navbar{
+      background-color:#222;
+      -background-color:rgba(10,10,10,0.5);
+    }
+    .navbar-brand-text{
+      position: relative;
+      left:0px;
+      margin-top:1.5em;
+      margin-left:1em;
+      float:left;
+    }
+    .textarea{
+      margin-top: 140px;
+      padding-top: 50px;
+      background-color: rgba(1,1,1,0.5);
+      margin-bottom: 50px;
+  }
+}

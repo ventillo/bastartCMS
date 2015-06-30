@@ -1,0 +1,19 @@
+.footer{
+  width:100%;
+  text-align:center;
+  padding-top: 16px;
+  padding-bottom: 5px;
+  background-color:rgba(12,12,12,0.4);
+  color: rgba(240,240,240,1);
+  bottom:0px;
+}
+.navbar-fixed-bottom{
+  padding: 0px;
+}
+
+@media (min-width: 800px) {
+  .footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
