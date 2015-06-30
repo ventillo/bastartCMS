@@ -1,0 +1,7 @@
+RewriteEngine on
+#RewriteBase /
+#RewriteRule content/(.+)/(.+)$ ?$1=$2 [L]
+#RewriteRule login$ ?page=admin [L]
+#RewriteRule login/(.+)$ ?page=admin&ad=$1 [L]
+#RewriteRule booking$ booking [L]
+RewriteRule ^([a-zA-Z]+)$ ?id=$1 [NC,L]
