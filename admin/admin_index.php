@@ -48,26 +48,11 @@ $baseUrl = 'http://example.com/ckfinder/files/';
     ],
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     toolbar2: "print preview media | forecolor backcolor emoticons",
-    document_base_url: "http://bastart.spoton.cz/",
     image_advtab: true,
     templates: [
         {title: 'Test template 1', content: 'Test 1'},
         {title: 'Test template 2', content: 'Test 2'}
-    ],
-    file_browser_callback: function(field, url, type, win) {
-        tinyMCE.activeEditor.windowManager.open({
-            file: './includes/kcfinder/browse.php?opener=tinymce4&field=' + field + '&type=' + type,
-            title: 'KCFinder',
-            width: 700,
-            height: 500,
-            inline: true,
-            close_previous: false
-        }, {
-            window: win,
-            input: field
-        });
-        return false;
-    }});
+    ]});
 
     </script>
 
