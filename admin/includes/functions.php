@@ -206,7 +206,7 @@ function delete_site_page($db,$id){
   return $result;
 }
 
-function table_exists($table){
+function table_exists($db,$table){
   $query = "SHOW TABLES LIKE '$table'";
   if($result = $db->query($query)){
     $row_num = $result->num_rows;
