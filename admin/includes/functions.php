@@ -204,7 +204,16 @@ function delete_site_page($db,$id){
   var_dump($db);
   $db = null;
   return $result;
+}
 
+function table_exists($table){
+  $query = "SHOW TABLES LIKE '$table'";
+  if($result = $db->query($query)){
+    $row_num = $result->num_rows;
+  }
+  $db = null;
+  if($row_num == 1) return true;
+  else return false; 
 }
 
 ?>
