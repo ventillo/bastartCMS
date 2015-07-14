@@ -216,4 +216,17 @@ function table_exists($db,$table){
   else return false; 
 }
 
+function create_table($db,$table,$structure){
+  $query = "CREATE TABLE $table ($structure)";
+  echo "<h5>".$query."</h5>";
+  $result = "Error by default";
+  if($db->query($query) === TRUE){
+    echo "table $table created OK<br>";
+    $result = 0;
+    #echo $result;
+  }
+  echo "<h6>".var_dump($db)."</h6>";
+  $db = null;
+  return $result;
+}
 ?>
