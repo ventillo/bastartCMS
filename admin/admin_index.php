@@ -83,26 +83,30 @@ tinymce.init({
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li><a href="./?section=site_pages">Site Pages</a></li>
+            <li><a href="./?section=blog_posts">Blog Posts</a></li>
+            <li><a href="./?section=gallery_items">Gallery</a></li>
             <li><a href="./?section=site_settings">Settings</a></li>
             <li><a href="./?section=user_profile">Profile</a></li>
             <li><a href="./?ad=logout"><? echo $user; ?> (LOGOUT)</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <!-- <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
-            <li><a href="./?section=site_pages">Site Pages</a></li>
-            <li><a href="./?section=blog_posts">Blog Posts</a></li>
-            <li><a href="./?section=gallery_items">Gallery</a></li>
-          </ul>
+            
+            
+            
+          </ul> 
           <ul class="nav nav-sidebar">
             <li><a href="">TODO</a></li>
             <li><a href="./">Blog settings</a></li>
@@ -110,7 +114,7 @@ tinymce.init({
             <li><a href="./">Themes?God forbid</a></li>
             <li><a href="./?section=about">About</a></li>
           </ul>
-        </div>
+        </div> -->
         <!-- This is where the fun begins -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <? include './includes/'.$section.'.php'; ?>
