@@ -105,10 +105,10 @@ tinymce.init({
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">TODO</a></li>
-            <li><a href="">Blog settings</a></li>
-            <li><a href="">Gallery settings</a></li>
-            <li><a href="">Themes?God forbid</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="./">Blog settings</a></li>
+            <li><a href="./">Gallery settings</a></li>
+            <li><a href="./">Themes?God forbid</a></li>
+            <li><a href="./?section=about">About</a></li>
           </ul>
         </div>
         <!-- This is where the fun begins -->
