@@ -27,10 +27,11 @@ if(isset($_GET['id'])){
   }
 }
 else{
-  include './include/home.php';
+  include './include/home.php'; // landing page
 }
 #-----------Footer begins here--------------------------------------------------
+require './include/footer.php'; 
 
-require './include/footer.php'; ?>
+?>
 </body>
 </html>

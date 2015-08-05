@@ -5,19 +5,19 @@
   <div class="form-group">
     <label for="site_name">Site Name</label>
     <input type="text" class="form-control" id="site_name" name="site_name" value="<? site_data($db, 'site_name'); ?>">
-    <label for="site_path">Full path</label>
+    <label for="site_path">Full path (including the trailing slash, e.g. http://bastart.us/)</label>
     <input type="text" class="form-control" id="site_path" name="site_path" value="<? site_data($db, 'site_path'); ?>">
-    <label for="motto">Motto</label>
+    <label for="motto">Motto (Displayed beneath Site Name)</label>
     <input type="text" class="form-control" id="motto" name="motto" value="<? site_data($db, 'motto'); ?>">
-    <label for="meta_description">Description</label>
+    <label for="meta_description">Description (Meta - displayed in google search)</label>
     <input type="text" class="form-control" id="meta_description" name="meta_description" value="<? site_data($db, 'meta_description'); ?>">
-    <label for="meta_author">Author</label>
+    <label for="meta_author">Author (Meta)</label>
     <input type="text" class="form-control" id="meta_author" name="meta_author" value="<? site_data($db, 'meta_author'); ?>">
-    <label for="meta_keywords">Keywords</label>
+    <label for="meta_keywords">Keywords (Meta)</label>
     <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="<? site_data($db, 'meta_keywords'); ?>">
-    <label for="background">Background</label>
+    <label for="background">Background (Full path to background image)</label>
     <input type="text" class="form-control" id="background" name="background" value="<? site_data($db, 'background'); ?>">
-    <label for="logo">Logo</label>
+    <label for="logo">Logo (Full path to logo 100x100px)</label>
     <input type="text" class="form-control" id="logo" name="logo" value="<? site_data($db, 'logo'); ?>">
     <br>
     <button type="submit" class="btn btn-default">Submit</button>
