@@ -8,10 +8,9 @@ if(isset($_POST['submit'])){
 	$query = "SELECT * FROM users_table WHERE username = '".$username."' AND password = '".$pass."'";
 	
     if($sql = $db->prepare($query)){
-
       $sql->bind_result($username, $pass, $fname, $lname, $tstamp);
       $sql->execute();
-	    $sql->store_result();
+	  $sql->store_result();
     
       // Row count is different for different databases
       // Mysql currently returns the number of rows found

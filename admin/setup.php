@@ -2,6 +2,9 @@
 <?
 require './includes/dbconnect.php';
 require './includes/functions.php';
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0'); // Proxies.
 ?>
 <html lang="en">
   <head>
@@ -39,6 +42,10 @@ if(table_exists($db,'users_table')) echo "<h2>TABLE users_table EXISTS!</h2><br>
 else {
   echo "<h2>TABLE users_table DOES NOT EXIST - Creating...</h2><br>" ;
   create_table($db,'users_table','username VARCHAR(50), password TEXT, first_name VARCHAR(50), last_name VARCHAR(50), timestamp DATE');
+  add_user($db,'admin');
+  $password = substr(hash('sha512',rand()),0,12);
+  add_user($db,"reset_$password");
+  echo "<h2 style=\"color:red;\">Your reset password is: reset_$password (write it down, it will not be displayed again)</h2>";
 }
 if(table_exists($db,'static_pages')) echo "<h2>TABLE static_pages EXISTS!</h2><br>" ;
 else {
@@ -60,8 +67,24 @@ else {
   echo "<h2>TABLE blog_config DOES NOT EXIST - Creating...</h2><br>" ;
   create_table($db,'blog_config','title text, callout text, meta_description text, met_keywords text');
 }
+if($_GET['reset']){
+  $reset_user = $_POST['password'];
+  $reset_user_from_db = get_reset_user($db,$reset_user);
+  echo "$reset_user = $reset_user_from_db";
+  if($reset_user == $reset_user_from_db){ #echo "$reset_user = $reset_user_from_db"; 
+    drop_config($db);
+    echo "DATABASE DROPPED, all settings wiped";
+  } 
+}
 ?>
-<div><a href="./">Back to ADMIN section</div>
+<div><a href="./">Back to ADMIN section</a></div>
+<form class="form-signin" action="setup.php?reset=1" method="post">
+  <h2 class="form-signin-heading"><? echo $ad_message; ?></h2>
+  <label for="inputPassword" class="sr-only">Reset Password</label>
+  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Reset</button>
+</form>
+
 </div>
 </body
 </html>
