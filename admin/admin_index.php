@@ -83,12 +83,12 @@ tinymce.init({
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
-            <li><a href="./?section=site_pages">Site Pages</a></li>
-            <li><a href="./?section=blog_posts">Blog Posts</a></li>
-            <li><a href="./?section=gallery_items">Gallery</a></li>
-            <li><a href="./?section=site_settings">Settings</a></li>
-            <li><a href="./?section=user_profile">Profile</a></li>
+            <li><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li <? if($section == 'site_pages') echo "class=\"active\""; ?>><a href="./?section=site_pages">Site Pages</a></li>
+            <li <? if($section == 'blog_posts') echo "class=\"active\""; ?>><a href="./?section=blog_posts">Blog Posts</a></li>
+            <li <? if($section == 'gallery_items') echo "class=\"active\""; ?>><a href="./?section=gallery_items">Gallery</a></li>
+            <li <? if($section == 'site_settings') echo "class=\"active\""; ?>><a href="./?section=site_settings">Settings</a></li>
+            <li <? if($section == 'user_profile') echo "class=\"active\""; ?>><a href="./?section=user_profile">Profile</a></li>
             <li><a href="./?ad=logout"><? echo $user; ?> (LOGOUT)</a></li>
           </ul>
           <!-- <form class="navbar-form navbar-right">
