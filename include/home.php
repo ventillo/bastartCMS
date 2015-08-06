@@ -6,7 +6,7 @@
   
     <div class="masthead-brand">
       <div class="logo">
-        <a href="<? site_data($db, 'site_path'); ?>"><img src="./img/<? site_data($db,'logo'); ?>" name="logo" width="100" height="100"></a>
+        <a href="<? site_data($db, 'site_path'); ?>"><img src="<? site_data($db,'logo'); ?>" name="logo" width="100" height="100"></a>
       </div>
       <div class="brand">
         <h3><a href="<? site_data($db, 'site_path'); ?>"><? site_data($db,'site_name'); ?></a></h3>
