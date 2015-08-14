@@ -10,15 +10,15 @@ A lightweight CMS based on bootstrap
 ````php 
        $dbUser     = "database_username";   //Database User Name
        $dbPass     = "database_password";   //Database Password
-       $dbDatabase = "database_name"; //Database Name
+       $dbDatabase = "database_name";       //Database Name
 ````
 3. Go to http://your_site/admin/setup.php
    Observe a lot of debugging messages, but pay attention to the bold and big 
    and RED. Write down the master reset password, you might need it. 
    The initial setup should read: 
-   
+````   
    TABLE users_table DOES NOT EXIST - Creating...
-
+````
    And additional tables. If any errors occur, please give me a shout.
 
 4. You're done, now you can login to the ADMIN section with: admin / changeme
