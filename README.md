@@ -5,12 +5,13 @@ A lightweight CMS based on bootstrap
 
 1. Copy the contents of this directory AS IS to your desired web folder
 
-2. Modify the file Your_web_folder/admin/includes/dbconnect.php to suit your connection details, mostly, these need to be modified:
 
+2. Modify the file Your_web_folder/admin/includes/dbconnect.php to suit your connection details, mostly, these need to be modified:
+````php 
        $dbUser     = "database_username";   //Database User Name
        $dbPass     = "database_password";   //Database Password
        $dbDatabase = "database_name"; //Database Name
-
+````
 3. Go to http://your_site/admin/setup.php
    Observe a lot of debugging messages, but pay attention to the bold and big 
    and RED. Write down the master reset password, you might need it. 
