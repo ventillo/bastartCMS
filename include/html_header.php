@@ -40,7 +40,7 @@ echo '<link href="./css/footer.css" rel="stylesheet">';
 
 <style>
 body{
-background: url(../img/<? site_data($db,'background'); ?>) no-repeat center center fixed;
+background: url(<? site_data($db,'background'); ?>) no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;

@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<? site_data($db, 'site_path'); ?>">
-                    <img src="./img/<? site_data($db,'logo'); ?>" name="logo" width="100" height="100">
+                    <img src="<? site_data($db,'logo'); ?>" name="logo" width="100" height="100">
                 </a>
             </div>
             <div class="navbar-brand-text"><a href="<? site_data($db, 'site_path'); ?>"><? site_data($db,'site_name'); ?></a> <br> <? site_data($db, 'motto'); ?></div>
@@ -37,9 +37,9 @@ $page_blob = static_page($db, $page);
 #echo "<h1>".$page_blob["title"]."</h1>";
 echo "<h2 class=\"text-left\">".$page_blob["callout"]."</h2>";
 echo "<br>";
-echo "<div class=\"container text\">";
+#echo "<div class=\"container text\">";
 echo $page_blob["content"];
-echo "</div>";
+#echo "</div>";
 ?>
 </div>
 </div>

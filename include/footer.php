@@ -1,3 +1,4 @@
+
 <div class="footer <? if($page == '' || $page == 'home') echo 'navbar-fixed-bottom'; ?>"><div class="inner">
 <p>Based on <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://spoton.cz/">Ventil</a>.<? add_footer_login_links($logged,$username); ?></p>
 </div>

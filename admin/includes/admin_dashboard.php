@@ -26,8 +26,8 @@ if(isset($_GET['error'])) $error = $_GET['error'];
 <? 
  if (isset($_GET['error'])){ 
    $error = $_GET['error'];
-   if ($error == '0') printf('<button type="button" class="btn btn-success"><a href="./">OK</a></button>');
-   if ($error != '0') printf('<button type="button" class="btn btn-warning"><a href="./">ERROR: %s</a></button>',$error); 
+   if ($error == '0') printf('<a href="./"><button type="button" class="btn btn-success">OK</button></a>');
+   if ($error != '0') printf('<a href="./"><button type="button" class="btn btn-warning">ERROR: %s</button></a>',$error); 
  }
 ?>
 <form action="./includes/user_add.php" role="form" method="post">

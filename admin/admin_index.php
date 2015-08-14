@@ -35,24 +35,34 @@ $baseUrl = 'http://example.com/ckfinder/files/';
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="<? site_data($db, 'site_path'); ?>/js/tinymce/tinymce.min.js"></script>
+    <script src="<? site_data($db, 'site_path'); ?>tinymce/tinymce.min.js"></script>
     <script>
-    tinymce.init({
-     selector: "textarea",
+tinymce.init({
+    selector: "textarea",
     theme: "modern",
     plugins: [
-        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-        "searchreplace wordcount visualblocks visualchars code fullscreen",
-        "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste textcolor colorpicker textpattern imagetools"
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+         "save table contextmenu directionality emoticons template paste textcolor responsivefilemanager"
+   ],
+   content_css: "css/content.css",
+   toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons | responsivefilemanager ", 
+   style_formats: [
+        {title: 'Bold text', inline: 'b'},
+        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+        {title: 'Example 1', inline: 'span', classes: 'example1'},
+        {title: 'Example 2', inline: 'span', classes: 'example2'},
+        {title: 'Table styles'},
+        {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
     ],
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons",
-    image_advtab: true,
-    templates: [
-        {title: 'Test template 1', content: 'Test 1'},
-        {title: 'Test template 2', content: 'Test 2'}
-    ]});
+   image_advtab: true ,
+   
+   external_filemanager_path:"/filemanager/",
+   filemanager_title:"Responsive Filemanager" ,
+   external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
+   relative_urls: false
+ }); 
 
     </script>
 
@@ -73,36 +83,40 @@ $baseUrl = 'http://example.com/ckfinder/files/';
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./?section=site_settings">Settings</a></li>
-            <li><a href="./?section=user_profile">Profile</a></li>
+            <li><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li <? if($section == 'site_pages') echo "class=\"active\""; ?>><a href="./?section=site_pages">Site Pages</a></li>
+            <li <? if($section == 'blog_posts') echo "class=\"active\""; ?>><a href="./?section=blog_posts">Blog Posts</a></li>
+            <li <? if($section == 'gallery_items') echo "class=\"active\""; ?>><a href="./?section=gallery_items">Gallery</a></li>
+            <li <? if($section == 'site_settings') echo "class=\"active\""; ?>><a href="./?section=site_settings">Settings</a></li>
+            <li <? if($section == 'user_profile') echo "class=\"active\""; ?>><a href="./?section=user_profile">Profile</a></li>
             <li><a href="./?ad=logout"><? echo $user; ?> (LOGOUT)</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <!-- <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="./">Dashboard<span class="sr-only">(current)</span></a></li>
-            <li><a href="./?section=site_pages">Site Pages</a></li>
-            <li><a href="./?section=blog_posts">Blog Posts</a></li>
-            <li><a href="./?section=gallery_items">Gallery</a></li>
-          </ul>
+            
+            
+            
+          </ul> 
           <ul class="nav nav-sidebar">
             <li><a href="">TODO</a></li>
-            <li><a href="">Blog settings</a></li>
-            <li><a href="">Gallery settings</a></li>
-            <li><a href="">Themes?God forbid</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="./">Blog settings</a></li>
+            <li><a href="./">Gallery settings</a></li>
+            <li><a href="./">Themes?God forbid</a></li>
+            <li><a href="./?section=about">About</a></li>
           </ul>
-        </div>
+        </div> -->
         <!-- This is where the fun begins -->
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="main"> <!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2  was in the class -->
         <? include './includes/'.$section.'.php'; ?>
         </div>
       </div>
