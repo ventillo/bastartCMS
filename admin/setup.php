@@ -73,7 +73,7 @@ else {
   echo "<h2>TABLE blog_config DOES NOT EXIST - Creating...</h2><br>" ;
   create_table($db,'blog_config','title text, callout text, meta_description text, met_keywords text');
 }
-if($_GET['reset']){
+if($_GET['reset'] == '1'){
   $reset_user = $_POST['password'];
   $reset_user_from_db = get_reset_user($db,$reset_user);
   echo "$reset_user = $reset_user_from_db";

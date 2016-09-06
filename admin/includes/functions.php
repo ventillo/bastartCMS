@@ -157,7 +157,10 @@ function get_reset_user($db,$user){
     $sql->fetch();
   }else return false; 
   $sql->close();
-  return $reset_user;   
+  if(strlen($reset_user)>6){
+    return $reset_user;
+  }
+  else return false;
 }
 
 function list_site_pages($db){
